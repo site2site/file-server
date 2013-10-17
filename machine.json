@@ -1,0 +1,6 @@
+{
+  "name": "file-server",
+  "description": "receives binary files encoded in base64 strings, encodes them, saves them, and outputs a link to a web-accessible URL of the file",
+  "server": "server.sitetosite.co",
+  "location": "Studio-X NYC"
+}

@@ -1,0 +1,16 @@
+{
+    "name": "file-server",
+    "description": "A Site to Site module that receives binary files encoded in base64 strings, encodes them, saves them, and outputs a link to a web-accessible URL of the file",
+    "version": "0.0.1",
+    "author": {
+        "name": "Troy Conrad Therrien <troyth@gmail.com>",
+        "email": "troyth@gmail.com"
+    },
+    "dependencies": {
+        "ws": "*",
+        "colors": "*"
+    },
+    "engines": {
+        "node": ">=0.10.0"
+    }
+}
