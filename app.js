@@ -58,8 +58,15 @@ function onCustomMessage( name, value, type ){
       if(name == "file input"){
         console.log('file buffer received');
 
-        var b64_buf = new Buffer(value, 'base64').toString('binary');
-        var buf = new Buffer(b64_buf, 'binary');
+        //var b64_buf = new Buffer(value, 'base64').toString('binary');
+        //var buf = new Buffer(b64_buf, 'binary');
+
+        var b64_buf_str = new Buffer(value, 'base64').toString();
+        var json_buf = JSON.parse( b64_buf_str );
+        console.log(json_buf.filename);
+
+        var b64_bin_buf = new Buffer(json_buf.binary, 'base64').toString('binary');
+        var buf = new Buffer(b64_bin_buf, 'binary');
 
         setTimeout(function(){
           var timestamp_filename = new Date().getTime() + ".png";
