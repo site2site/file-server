@@ -70,6 +70,8 @@ function onCustomMessage( name, value, type ){
           fs.writeFile(filename, buf, 'binary', function(err){
             console.log(filename + ' written');
 
+            console.log('sending url: ' + hosted_path + timestamp_filename);
+
             sb.send("url", "string", hosted_path + timestamp_filename);
 
           });
