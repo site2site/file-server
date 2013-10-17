@@ -61,12 +61,13 @@ function onCustomMessage( name, value, type ){
         //var b64_buf = new Buffer(value, 'base64').toString('binary');
         //var buf = new Buffer(b64_buf, 'binary');
 
-        var b64_buf_str = new Buffer(value, 'base64').toString('utf8');
-        var json_buf = JSON.parse( b64_buf_str );
-        console.log(json_buf.filename);
+        var json_value = JSON.parse( value );
 
-        var b64_bin_buf = new Buffer(json_buf.binary, 'base64').toString('binary');
-        var buf = new Buffer(b64_bin_buf, 'binary');
+        console.log('filename: '+ json_value.filename);
+
+        var b64_buf = new Buffer(json_value.binary, 'base64').toString('binary');
+        var buf = new Buffer(b64_buf, 'binary');
+
 
         setTimeout(function(){
           var timestamp_filename = new Date().getTime() + ".png";
