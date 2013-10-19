@@ -63,14 +63,14 @@ function onCustomMessage( name, value, type ){
 
         var json_value = JSON.parse( value );
 
-        console.log('filename: '+ json_value.filename);
+        console.log('filename: '+ json_value.filename + ' with encoding: ' + json_value.encoding);
 
         var b64_buf = new Buffer(json_value.binary, 'base64').toString('binary');
         var buf = new Buffer(b64_buf, 'binary');
 
 
         setTimeout(function(){
-          var timestamp_filename = new Date().getTime() + ".png";
+          var timestamp_filename = new Date().getTime() + "." + json_value.encoding;
           var filename = filepath + timestamp_filename;
 
           //TODO: add check for if filepath directory exists, if not create it
