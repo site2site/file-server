@@ -61,6 +61,8 @@ function onCustomMessage( name, value, type ){
         //var b64_buf = new Buffer(value, 'base64').toString('binary');
         //var buf = new Buffer(b64_buf, 'binary');
 
+        console.dir(value);  
+
         var json_value = JSON.parse( value );
 
         console.log('filename: '+ json_value.filename + ' with encoding: ' + json_value.encoding);
